@@ -1,0 +1,174 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#2C2B3D, #00BFA6);
+    width: 100vw;
+    height: 100vh;
+    font-size: 62.5%;
+    font-family: 'JetBrains Mono', sans-serif;
+}
+
+/*------------------------------HEADING ------------------------*/
+div h1 {
+    text-align: center;
+    font-size: 4em;
+    color: #ffffff
+}
+/*-------------------------------ROUND--------------------------*/
+div h2 {
+    text-align: center;
+    font-size: 4em;
+    color: #ffffff;
+}
+
+.roundX {
+    color: red;
+}
+
+.roundO {
+    color: greenyellow;
+}
+/*------------------------------GAME----------------------------*/
+#container {
+    padding-top: 7em;
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(3, auto);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.celula {
+    border: white 3px solid;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.one,
+.two,
+.three {
+    border-top: none;
+
+}
+
+.one,
+.four,
+.seven {
+    border-left: none;
+}
+
+.three,
+.six,
+.nine {
+    border-right: none;
+}
+
+.seven,
+.eight,
+.nine {
+    border-bottom: none;
+}
+
+.symbol {
+    height: 10em;
+    width: 10em;
+    cursor: pointer;
+}
+
+.symbol:hover{
+    background-color: rgba(255,255,255, 0.3);
+}
+
+/*----------------------------------SYMBOLS--------------------------------*/
+.O {
+    position: relative;
+    border: 10px solid greenyellow;
+    border-radius: 6em;
+    height: 7.5em;
+    width: 7.5em;
+    cursor: not-allowed;
+}
+
+
+.X {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.X::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\274c";
+    font-size: 50px;
+    color: #FFF;
+    line-height: 100px;
+    text-align: center;
+    font-size: 7em;
+    cursor: not-allowed;
+}
+
+
+.X::after {
+    display: flex;
+    content: "\274c";
+    font-size: 7em;
+}
+
+/*-------------------------------------RESULT---------------------------*/
+
+#winning-message {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#winning-message-text {
+    font-size: 8em;
+    color: white;
+}
+
+#winning-message-button {
+    padding: 1em 3em;
+    background-color: #00BFA6;
+    border-radius: 50px;
+    font-size: 3em;
+    cursor: pointer;
+    border: #2C2B3D 5px solid;
+    font-family: 'JetBrains Mono', sans-serif;
+    font-weight: 900;
+}
+
+#winning-message-button:hover {
+    padding: 1em 3em;
+    background-color: #029a85;
+    border-radius: 50px;
+    font-size: 3em;
+    cursor: pointer;
+    color: white;
+    border: #2C2B3D 5px solid;
+    font-family: 'JetBrains Mono', sans-serif;
+}
